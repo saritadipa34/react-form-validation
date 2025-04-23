@@ -6,7 +6,6 @@ const App=()=>{
   const [errors,setErrors]=useState({});
 
 const validate=()=>{
-
 const newErrors={};
 
   if(!inputValues.name.trim()){
@@ -25,6 +24,12 @@ newErrors.email="invalid email";
   newErrors.password="Enter password";
  } else if(inputValues.password.length < 8){
   newErrors.password="atleast 8 characters";
+ } else if (!/[A-Z]/.test(inputValues.password)){
+newErrors.password="Password must include one UpperCase";
+ } else if (!/[a-z]/.test(inputValues.password)){
+  newErrors.password="Password must include one LowerCase";
+ } else if (!/[@/$%':,#`;"&<>]/.test(inputValues.password)){
+  newErrors.password="Password must include special character";
  }
 
 return newErrors;
