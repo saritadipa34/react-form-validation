@@ -5,12 +5,12 @@
 }
 
 form{
-    height:380px;
+    min-height:380px;
     width: 350px;
     background-color: aquamarine;
     display: flex;
     flex-direction: column;
-    padding: 20px ;
+    padding: 20px 20px 0 20px  ;
 }
 
 h1{
